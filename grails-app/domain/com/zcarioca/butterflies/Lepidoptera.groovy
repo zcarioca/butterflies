@@ -1,5 +1,7 @@
 package com.zcarioca.butterflies
 
+import org.apache.commons.lang.WordUtils;
+
 class Lepidoptera {
 
    String scientificName
@@ -12,6 +14,18 @@ class Lepidoptera {
    Date createdDate = new Date()
    Date lastModified = new Date()
 
+   void setScientificName(String scientificName) {
+      this.scientificName = WordUtils.capitalize(scientificName?.trim())
+   }
+   
+   void setCommonName(String commonName) {
+      this.commonName = WordUtils.capitalize(commonName?.trim())
+   }
+   
+   String toString() {
+      return "${scientificName} (${commonName})"
+   }
+   
    static hasMany = [ states : State ]
 
    static belongsTo = [ family : Family ]
