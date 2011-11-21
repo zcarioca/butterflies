@@ -1,0 +1,145 @@
+body {
+   color: white;
+   background-color: black;
+   font-family: Arial, Helvetica, sans-serif;
+}
+#modular_bg {
+   background-image: url('/butterflies/images/bg.png');
+   position: fixed;
+   z-index: 999;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   height: 100%;
+}
+#bg {
+   background-repeat: no-repeat;
+   background-position: center;
+   position: absolute;
+   z-index: 1;
+   width: 100%;
+   height: 100%;
+   top: 0px;
+   left: 0px;
+}
+#attribution {
+   position: fixed;
+   color: white;
+   bottom: 5px;
+   right: 5px;
+   font-size: 9pt;
+   text-shadow: 2px 2px 4px #003;
+}
+#attribution a:link, #attribution a:visited {
+   color: white;
+   text-decoration: none;
+}
+#attribution a:active, #attribution a:hover {
+   text-decoration: underline;
+}
+#tool_pane, #content_pane {
+   position: absolute;
+   z-index: 100;
+   top: 30px;
+   left: 30px;
+}
+#content_pane {
+   padding: 15px;
+}
+#scroll_pane {
+   width: 100%;
+   height: 100%;
+   overflow: auto;  
+}
+h1, h2, h3 {
+   margin: 5px 0px;
+   font-variant: small-caps;
+}
+.bg_trans {
+   background-image: url('/butterflies/images/bg.png');
+   border: 6px #edf double;
+   border-radius: 10px;
+   -moz-border-radius: 10px;
+   -webkit-border-radius: 10px;
+   box-shadow: 2px 2px 4px #003;
+   -moz-box-shadow: 2px 2px 4px #003;
+   -webkit-box-shadow: 2px 2px 4px #003;
+}
+.tool_item {
+   border-radius: 10px;
+   -moz-border-radius: 10px;
+   -webkit-border-radius: 10px;
+   padding: 3px 10px;
+   float: left;
+   width: 180px;
+   cursor: pointer;
+   background-color: transparent;
+   color: #edf;
+}
+.hidden {
+   display: none;
+}
+.state_list {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+.state_list li {
+   float: left;
+   padding: 5px;
+}
+.link_list li a {
+   color: white;
+   text-decoration: none;
+}
+.link_list li a:hover,.link_list li a:active {
+   text-decoration: underline;
+}
+.row a {
+   color: white;
+   text-decoration: none;
+}
+.row a:hover, .row a:active {
+   text-decoration: underline;
+}
+#butterfly_list {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+#butterfly_list li {
+   float: left;
+   width: 60%;
+   padding: 5px;
+}
+#butterfly_list li a {
+   font-size: 110%;
+   color: white;
+   text-decoration: none;
+}
+#butterfly_list li a:hover, #butterfly_list li a:active {
+   text-decoration: underline;
+}
+table.butterfly_table {
+   width: 80%;
+}
+table.butterfly_table .row td,
+table.butterfly_table .row th {
+   border-bottom: 1px solid white;
+}
+table.butterfly_table .row td th,
+table.butterfly_table .row td td {
+   border: 0;
+}
+table.butterfly_table th {
+   white-space: nowrap;
+   width: 20%;
+   padding-right:10px;
+   text-align: left;
+}
+table.butterfly_table td {
+   text-align: left;
+}
+table.butterfly_table .description {
+   height: 100px;
+}
