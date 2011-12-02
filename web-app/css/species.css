@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+#species-search-results {
+   display: none;
+}
+ul.speciesList {
+   list-style:none;
+   clear: both;  
+}
+ul.speciesList li {
+   float:left;
+   width: 45%;
+}
+ul.speciesList li a {
+   text-decoration: none;
+}
+ul.speciesList li a:hover {
+   border-bottom: 1px dotted #edf;
+}

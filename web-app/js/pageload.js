@@ -53,16 +53,32 @@
     }
   };
   */
+  
+  $.DefaultContent = null;
+  $.loadHashPage = function() {
+     var url = $.param.fragment();
+     var scrollPane = $('#scroll_pane');
+     
+     if (url == '') {
+        scrollPane.empty();
+        scrollPane.append($.DefaultContent);
+        return;
+     }
+     // TODO show loading page
+     scrollPane.load(url, function() {
+       //TODO remove loading page
+     });
+  };
+  
   $(document).ready(function() {
     //$.getJSON('json_image.php', setBG);
     resizeContentPane();
     $(window).resize(resizeContentPane);
-    //loadPage();
     resetToolBar();
-    /*
     $(window).bind('hashchange', function() {
-      loadPage();
+      $.loadHashPage();
     });
-    */
+    $.DefaultContent = $('#default-content');
+    $(window).trigger('hashchange');
   });
 })(jQuery);

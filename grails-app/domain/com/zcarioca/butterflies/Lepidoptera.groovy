@@ -23,12 +23,22 @@ class Lepidoptera {
    }
    
    String toString() {
-      return "${scientificName} (${commonName})"
+      StringBuilder sb = new StringBuilder(scientificName)
+      if (commonName) {
+         sb.append(" (${commonName})")
+      }
+      return sb.toString()
    }
    
    static hasMany = [ states : State ]
 
    static belongsTo = [ family : Family ]
+   
+   static mapping = {
+      sort scientificName:'asc'
+      description type: 'text'
+      states lazy:false
+   }
 
    static constraints = {
       scientificName(maxSize: 255, nullable: false, unique: true)

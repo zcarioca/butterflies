@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+ul.familyList {
+   list-style: none;
+   margin:0;
+   padding: 0;
+   display: block;
+}
+.familyList  ul li {
+   display: block;
+   padding: 5px 30px;
+}
+
+.familyList li a {
+   text-decoration: none;
+}
+.familyList li a:hover {
+   border-bottom: 1px dotted #edf;
+}
+#superFamilies * { font-size: 14pt; }
+#families * { font-size: 12pt; }
+#subFamilies * { font-size: 10pt; }
+#family-area a {
+   text-decoration: none;
+}
+#family-area a:hover {
+   border-bottom: 1px dotted #edf;
+}
+#species .key {
+   cursor: pointer;
+}
+#species .key:hover {
+   border-bottom: 1px dotted white;
+}
+#species ul {
+   display: none
+}

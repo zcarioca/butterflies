@@ -64,7 +64,7 @@ class BootStrap {
             def scientificName = WordUtils.capitalize(fields[0])
             if (!Family.findByScientificName(scientificName)) {
                def family = new Family(scientificName: scientificName, commonName: fields[1],
-                     description: fields[3], familyType: FamilyType.BUTTERFLY, familyOrder: FamilyOrder.valueOf(fields[4]))
+                     description: fields[3].replace("\\n", "\n"), familyType: FamilyType.BUTTERFLY, familyOrder: FamilyOrder.valueOf(fields[4]))
                family.save()
 
                if (fields[2]) {

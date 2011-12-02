@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+/* show actions */
+.key {
+   font-weight: bold !important;
+   font-size: 11pt;
+   color: white;
+}
+.value {
+   font-weight: normal !important;
+}
+.value a {
+   text-decoration: none;
+}
+.value a:hover {
+   border-bottom: 1px dotted #edf;
+}
+.detail-name, .detail-list, .detail-description {
+   clear: both;
+   display: block;
+}
+.detail-name span {
+   float: left;
+   width: 15em;
+   padding: 5px 0;
+}
+.detail-list span {
+   float: left;
+}
+.detail-list .key {
+   padding-top: 5px;
+}
+.detail-list ul {
+   clear: both;
+   list-style: none;
+   margin: 0;
+   padding: 5px 0 5px 1.5em;
+}
+.detail-list li {
+   float: left;
+   padding: 2px 0;
+   width: 45%;
+}
+.detail-description {
+   padding: 5px 0;
+}
+.detail-description .value {
+   display: block;
+   padding-left: 1.5em;
+}
+
+/* Rolling Toggle */
+.__show, .__hide {
+   padding-right: 20px;
+}
+.__show {
+   background: transparent url(../images/arrow_sprite.png) right 7px no-repeat;
+}
+.__hide {
+   background: transparent url(../images/arrow_sprite.png) right -33px no-repeat;
+}
+
+input, textarea {
+   color: #000 !important
+}

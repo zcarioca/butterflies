@@ -1,7 +1,10 @@
 body {
-   color: white;
    background-color: black;
-   font-family: Arial, Helvetica, sans-serif;
+   font-family: "Helvetica", Arial, sans-serif;
+}
+* {
+   font-size: 10pt;
+   color: #edf;
 }
 #modular_bg {
    background-image: url('/butterflies/images/bg.png');
@@ -53,7 +56,12 @@ body {
 }
 h1, h2, h3 {
    margin: 5px 0px;
-   font-variant: small-caps;
+   font-size: 19pt;
+   text-transform: uppercase;
+   border-bottom: 3px solid #fff;
+   padding-bottom: 10px;
+   margin-bottom: 10px;
+   color: white;
 }
 .bg_trans {
    background-image: url('/butterflies/images/bg.png');
@@ -75,6 +83,13 @@ h1, h2, h3 {
    cursor: pointer;
    background-color: transparent;
    color: #edf;
+}
+.tool_item a {
+   color: #edf;
+   text-decoration: none;
+}
+.tool_item:hover {
+   background-color: black;
 }
 .hidden {
    display: none;

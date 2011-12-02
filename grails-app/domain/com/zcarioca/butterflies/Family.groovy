@@ -2,7 +2,7 @@ package com.zcarioca.butterflies
 
 import org.apache.commons.lang.WordUtils;
 
-class Family {
+class Family implements Comparable<Family> {
    String scientificName
    String commonName
    String description
@@ -23,8 +23,17 @@ class Family {
    }
    
    String toString() {
-      return this.scientificName
+      StringBuilder sb = new StringBuilder()
+      sb.append(this.scientificName)
+      if (this.commonName) {
+         sb.append(" (${commonName})")
+      }
+      return sb.toString()
    }
+   
+   int compareTo(Family family) {
+      scientificName.toLowerCase() <=> family.scientificName.toLowerCase()
+	}
 
    static constraints = {
       scientificName(blank: false, nullable: false, unique: true)
@@ -32,5 +41,11 @@ class Family {
       description(maxSize: 2000, nullable: true)
       familyType(nullable: false)
       familyOrder(nullable: false)
+   }
+   
+   static mapping = {
+     sort scientificName:'asc'
+     description type: 'text'
+     subFamilies lazy:true
    }
 }
