@@ -87,6 +87,8 @@ log4j = {
            'net.sf.ehcache.hibernate'
 
     warn   'org.mortbay.log'
+    
+    info  'grails.app.bootstrap'
 }
 
 grails.views.javascript.library="jquery"

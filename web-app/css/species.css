@@ -17,3 +17,9 @@ ul.speciesList li a {
 ul.speciesList li a:hover {
    border-bottom: 1px dotted #edf;
 }
+#states ul {
+   width: 15em;
+}
+#states ul li {
+   width: 5em;
+}

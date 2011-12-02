@@ -22,10 +22,10 @@ class BootStrap {
 
    def createAdminIfNotExists = {
       if (!User.findByUsername('admin')) {
-         println "Could not find admin, creating user"
+         log.info "Could not find admin, creating user"
          new User(username: 'admin', password: '1234', profile: new Profile(email: 'admin@website.com')).save()
       } else {
-         println "Admin user already exists"
+         log.info "Admin user already exists"
       }
    }
 
@@ -33,7 +33,7 @@ class BootStrap {
       if (Country.count() == 0) {
          iterateOverFile("countries.csv") { fields ->
             def country = new Country(name: fields[0], iso2: fields[1], iso3: fields[2])
-            println "Inserting new country: ${country}"
+            log.info "Inserting new country: ${country}"
             country.save()
          }
       }
@@ -44,17 +44,18 @@ class BootStrap {
 
       if (!usa) {
          usa = new Country(iso2: 'US', iso3: 'USA', name: 'United States')
-         println "Inserting country ${usa}"
+         log.info "Inserting country ${usa}"
          usa.save()
       }
       if (State.count() == 0) {
          iterateOverFile("states.csv") { fields ->
-            println "Inserting new state: ${fields}"
+            log.info "Inserting new state: ${fields}"
 
-            usa.addToStates(new State(country: usa, abbreviation: fields[0], name: fields[1]))
+            usa.addToStates(new State(country: usa, abbreviation: fields[0], name: fields[1]).save())
          }
+         usa.save()
       } else {
-         println "States already inserted"
+         log.info "States already inserted"
       }
    }
 
@@ -72,10 +73,10 @@ class BootStrap {
                   def parent = Family.findByScientificName(parentName)
                   parent.addToSubFamilies(family)
                   parent.save()
-                  println "Added Family ${family} to ${parent}"
+                  log.info "Added Family ${family} to ${parent}"
                } else {
                   family.save()
-                  println "Added Family ${family}"
+                  log.info "Added Family ${family}"
                }
             }
          }
@@ -96,13 +97,17 @@ class BootStrap {
                   family.save()
                   
                   fields[7].split(',').each {
-                     def state = State.findByAbbreviation(it)
+                     def code = it.trim()
+                     def state = State.findByAbbreviation(code)
                      if (state) {
                         butterfly.addToStates(state)
+                        log.debug "Added ${state} to ${butterfly}"
+                     } else {
+                        log.warn "Could not find state ${code}"
                      }
                   }
                   butterfly.save()
-                  println "Saved ${butterfly}"
+                  log.info "Saved ${butterfly}"
                }
             }
          }

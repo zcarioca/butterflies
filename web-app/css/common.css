@@ -63,3 +63,10 @@
 input, textarea {
    color: #000 !important
 }
+
+#search-criteria, #search-results {
+   clear: both;
+   color: white;
+   font-weight: bold;
+   border-bottom: 1px dotted white;
+}
