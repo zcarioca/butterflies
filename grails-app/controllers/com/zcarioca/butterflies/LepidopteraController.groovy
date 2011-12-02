@@ -26,7 +26,7 @@ class LepidopteraController {
                if (field == 'state' && value) {
                   eq('s.abbreviation', value)
                } else if (props.grep(field) && value) {
-                  eq(field, value)
+                  ilike(field, "%${value}%")
                }
             }
          }
